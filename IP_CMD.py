@@ -6,6 +6,7 @@ class IPCmd:
         self.device_type = ''
 
     def core_ip_extract(self):
+        ''' To read device ip addresses from text file'''
         with open("./Input/device_ip.txt",'r') as file:
             f = file.read()
             self.core_ip_list = f.strip().splitlines()[1:]
