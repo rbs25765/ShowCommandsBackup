@@ -6,19 +6,24 @@ class IPCmd:
         self.device_type = ''
 
     def core_ip_extract(self):
-        ''' To read device ip addresses from text file'''
-        with open("./Input/device_ip.txt",'r') as file:
+        """To read core device ip from text file
+            and returns a list"""
+        with open("./Input/device_ip.txt", 'r') as file:
             f = file.read()
             self.core_ip_list = f.strip().splitlines()[1:]
         return self.core_ip_list
 
     def cmd_extract(self):
+        """ Extract device commands from text file
+            and returns a list """
         with open("./Input/commands.txt",'r') as file:
             f = file.read()
             self.cmd_list = f.strip().splitlines()[1:]
             return self.cmd_list
 
     def device_type_extract(self):
+        """ Enter choice to connect the device and 
+            returns device type """
         print("Press c for Cisco, j for Juniper, h for HP")
         while True:
             choice = input("Enter your Device Choice: ")
