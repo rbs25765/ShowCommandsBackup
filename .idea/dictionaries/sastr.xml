@@ -2,8 +2,12 @@
   <dictionary name="sastr">
     <words>
       <w>cisco</w>
+      <w>creds</w>
+      <w>hname</w>
       <w>ipinfo</w>
+      <w>mgmt</w>
       <w>netmiko</w>
+      <w>passwd</w>
       <w>procurve</w>
     </words>
   </dictionary>

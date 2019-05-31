@@ -3,8 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="28fff129-b6e8-4ee3-8ec4-6982bd34f17a" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/dictionaries/sastr.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/sastr.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core_Extract.py" beforeDir="false" afterPath="$PROJECT_DIR$/Core_Extract.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Config_Extract.py" beforeDir="false" afterPath="$PROJECT_DIR$/Config_Extract.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/IP_CMD.py" beforeDir="false" afterPath="$PROJECT_DIR$/IP_CMD.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/commands.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Input/commands.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Input/device_ip.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Input/device_ip.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Output/192.168.2.142.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/cdp_extract.py" beforeDir="false" afterPath="$PROJECT_DIR$/cdp_extract.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -17,17 +21,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/IP_CMD.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="661">
-              <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+            <state relative-caret-position="1035">
+              <caret line="57" selection-start-line="57" selection-end-line="57" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/Core_Extract.py">
+        <entry file="file://$PROJECT_DIR$/Config_Extract.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="230">
-              <caret line="73" column="28" lean-forward="true" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+            <state relative-caret-position="138">
+              <caret line="60" column="37" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="37" />
               <folding>
                 <element signature="e#0#91#0" expanded="true" />
               </folding>
@@ -38,10 +42,10 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/cdp_extract.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="253">
-              <caret line="11" selection-start-line="11" selection-end-line="11" />
+            <state relative-caret-position="792">
+              <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
               <folding>
-                <element signature="e#0#38#0" expanded="true" />
+                <element signature="e#0#28#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -56,6 +60,13 @@
       </list>
     </option>
   </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>cdp</find>
+      <find>159</find>
+      <find>142':</find>
+    </findStrings>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -63,10 +74,13 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Router_Discovery.py" />
-        <option value="$PROJECT_DIR$/cdp_extract.py" />
         <option value="$PROJECT_DIR$/Output/192.168.2.142.txt" />
-        <option value="$PROJECT_DIR$/IP_CMD.py" />
         <option value="$PROJECT_DIR$/Core_Extract.py" />
+        <option value="$PROJECT_DIR$/IP_CMD.py" />
+        <option value="$PROJECT_DIR$/Input/device_ip.txt" />
+        <option value="$PROJECT_DIR$/Input/commands.txt" />
+        <option value="$PROJECT_DIR$/Config_Extract.py" />
+        <option value="$PROJECT_DIR$/cdp_extract.py" />
       </list>
     </option>
   </component>
@@ -87,13 +101,13 @@
         <subPane>
           <expand>
             <path>
-              <item name="Device_Auto_Discovery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Device_Auto_Discovery" type="462c0819:PsiDirectoryNode" />
+              <item name="ShowCommandsBackup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShowCommandsBackup" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="Device_Auto_Discovery" type="b2602c69:ProjectViewProjectNode" />
-              <item name="Device_Auto_Discovery" type="462c0819:PsiDirectoryNode" />
-              <item name="Output" type="462c0819:PsiDirectoryNode" />
+              <item name="ShowCommandsBackup" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ShowCommandsBackup" type="462c0819:PsiDirectoryNode" />
+              <item name="Input" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -103,6 +117,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
   </component>
   <component name="RecentsManager">
@@ -122,7 +137,28 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.Core_Extract">
+  <component name="RunManager" selected="Python.cdp_extract">
+    <configuration name="Config_Extract" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Device_Auto_Discovery" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Config_Extract.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="Core_Extract" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="Device_Auto_Discovery" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -186,10 +222,33 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="cdp_extract" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="Device_Auto_Discovery" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/cdp_extract.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Python.Core_Extract" />
+        <item itemvalue="Python.cdp_extract" />
+        <item itemvalue="Python.Config_Extract" />
         <item itemvalue="Python.IP_CMD" />
+        <item itemvalue="Python.Core_Extract" />
         <item itemvalue="Python.Router_Discovery" />
       </list>
     </recent_temporary>
@@ -209,14 +268,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18071654" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32936078" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.27302274" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.21018419" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -232,24 +290,42 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/Output/192.168.2.131.txt" />
-    <entry file="file://$PROJECT_DIR$/Output/192.168.2.142.txt">
+    <entry file="file://$PROJECT_DIR$/Core_Extract.py" />
+    <entry file="file://$PROJECT_DIR$/Input/username_passwords.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Input/device_ip.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1288">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
+        <state relative-caret-position="23">
+          <caret line="1" column="13" selection-start-line="1" selection-start-column="13" selection-end-line="1" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Input/commands.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="184">
+          <caret line="8" column="17" selection-start-line="8" selection-start-column="17" selection-end-line="8" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/IP_CMD.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="661">
-          <caret line="40" column="31" selection-start-line="40" selection-start-column="31" selection-end-line="40" selection-end-column="31" />
+        <state relative-caret-position="1035">
+          <caret line="57" selection-start-line="57" selection-end-line="57" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Core_Extract.py">
+    <entry file="file://$PROJECT_DIR$/Output/192.168.2.142.txt">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="73" column="28" lean-forward="true" selection-start-line="73" selection-start-column="28" selection-end-line="73" selection-end-column="28" />
+        <state relative-caret-position="5957">
+          <caret line="259" column="18" lean-forward="true" selection-start-line="259" selection-start-column="18" selection-end-line="259" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Config_Extract.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="60" column="37" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="37" />
           <folding>
             <element signature="e#0#91#0" expanded="true" />
           </folding>
@@ -258,10 +334,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/cdp_extract.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="11" selection-start-line="11" selection-end-line="11" />
+        <state relative-caret-position="792">
+          <caret line="66" lean-forward="true" selection-start-line="66" selection-end-line="66" />
           <folding>
-            <element signature="e#0#38#0" expanded="true" />
+            <element signature="e#0#28#0" expanded="true" />
           </folding>
         </state>
       </provider>
