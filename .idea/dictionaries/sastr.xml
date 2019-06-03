@@ -3,12 +3,14 @@
     <words>
       <w>cisco</w>
       <w>creds</w>
+      <w>endtime</w>
       <w>hname</w>
       <w>ipinfo</w>
       <w>mgmt</w>
       <w>netmiko</w>
       <w>passwd</w>
       <w>procurve</w>
+      <w>starttime</w>
     </words>
   </dictionary>
 </component>
