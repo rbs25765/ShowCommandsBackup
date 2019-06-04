@@ -76,13 +76,17 @@ class DeviceConnect:
         if net_connect is not None:
             net_connect.enable()
             for cmd in self.commands:
-                net_connect.send_command_expect(cmd,expect_string=r'>|#|$', delay_factor=2, strip_command=False, strip_prompt=False, max_loops=100)
-                
+                output = net_connect.send_command_expect(cmd,expect_string=r'>|#|$', delay_factor=4, strip_command=False, strip_prompt=False, max_loops=100)
+                device_config.append(output)
+            for config in device_config:
+                with open ('./Output/{}.txt'.format('device_config'),'a') as f:
+                    f.write(output)
+            return device_config
 
 
 if __name__ == '__main__':
 
     dc = DeviceConnect()
-    net_cons = dc.dev_connect('192.168.2.142')
-    device = dc.config_extract(net_cons)
+    net_cons = dc.dev_connect('192.168.86.136')
+    device = dc.config_extract_except(net_cons)
     print(device)
