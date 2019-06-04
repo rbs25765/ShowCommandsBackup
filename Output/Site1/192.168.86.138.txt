@@ -1,0 +1,167 @@
+terminal leng 0
+
+terminal leng 0
+GNS3-Site-R5#
+
+show ip arp
+
+show ip arp
+Protocol  Address          Age (min)  Hardware Addr   Type   Interface
+Internet  10.5.1.1                -   ca05.247c.0038  ARPA   FastEthernet2/0
+Internet  10.5.1.2              223   ca01.0068.0038  ARPA   FastEthernet2/0
+Internet  10.5.1.5                -   ca05.247c.001c  ARPA   GigabitEthernet1/0
+Internet  10.5.1.6              222   ca03.2494.001c  ARPA   GigabitEthernet1/0
+Internet  192.168.86.1            0   0050.56c0.0001  ARPA   GigabitEthernet0/0
+Internet  192.168.86.136        210   ca01.0068.0008  ARPA   GigabitEthernet0/0
+Internet  192.168.86.137        210   ca02.18d0.0008  ARPA   GigabitEthernet0/0
+Internet  192.168.86.138          -   ca05.247c.0008  ARPA   GigabitEthernet0/0
+Internet  192.168.86.139        201   ca03.2494.0008  ARPA   GigabitEthernet0/0
+Internet  192.168.86.140        201   ca04.2670.0008  ARPA   GigabitEthernet0/0
+Internet  192.168.86.141        195   ca06.1f48.0008  ARPA   GigabitEthernet0/0
+Internet  192.168.86.254        202   0050.56e9.33c0  ARPA   GigabitEthernet0/0
+GNS3-Site-R5#
+
+show runn
+
+show runn
+Building configuration...
+
+Current configuration : 1659 bytes
+!
+upgrade fpd auto
+version 12.4
+service timestamps debug datetime msec
+service timestamps log datetime msec
+no service password-encryption
+!
+hostname GNS3-Site-R5
+!
+boot-start-marker
+boot-end-marker
+!
+logging message-counter syslog
+enable secret 5 $1$OjF6$F3PnHh6wBNWp1p63jhErv.
+!
+no aaa new-model
+ip source-route
+no ip icmp rate-limit unreachable
+ip cef
+!
+!
+!
+!
+no ip domain lookup
+ip domain name ex.com
+no ipv6 cef
+!
+multilink bundle-name authenticated
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+!
+username cisco privilege 0 secret 5 $1$Nr1C$wNuRerD1oG4TqltLCsBSP/
+archive
+ log config
+  hidekeys
+! 
+!
+!
+!
+!
+ip tcp synwait-time 5
+ip ssh version 2
+!
+!
+!
+!
+interface Loopback0
+ ip address 1.1.1.5 255.255.255.255
+!
+interface Ethernet0/0
+ no ip address
+ shutdown
+ duplex auto
+!
+interface GigabitEthernet0/0
+ description ### Connect to DHCP Server ####
+ ip address dhcp
+ duplex full
+ speed 1000
+ media-type gbic
+ negotiation auto
+!
+interface GigabitEthernet1/0
+ ip address 10.5.1.5 255.255.255.252
+ negotiation auto
+!
+interface FastEthernet2/0
+ ip address 10.5.1.1 255.255.255.252
+ duplex auto
+ speed auto
+!
+interface FastEthernet2/1
+ no ip address
+ shutdown
+ duplex auto
+ speed auto
+!
+router ospf 1
+ log-adjacency-changes
+ network 0.0.0.0 255.255.255.255 area 0
+!
+ip forward-protocol nd
+no ip http server
+no ip http secure-server
+!
+!
+!
+logging alarm informational
+no cdp log mismatch duplex
+!
+!
+!
+!
+!
+!
+!
+control-plane
+!
+!
+!
+!
+!
+!
+!
+gatekeeper
+ shutdown
+!
+!
+line con 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line aux 0
+ exec-timeout 0 0
+ privilege level 15
+ logging synchronous
+ stopbits 1
+line vty 0 4
+ login local
+ transport input ssh
+!
+end
+
+GNS3-Site-R5#
+

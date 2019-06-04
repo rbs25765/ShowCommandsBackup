@@ -64,7 +64,7 @@ class DeviceConnect:
         if net_connect is not None:
             net_connect.enable()
             for cmd in self.commands:
-                config_output = net_connect.send_command_timing(cmd, delay_factor=2)
+                config_output = net_connect.send_command_timing(cmd, delay_factor=5,strip_command = False, strip_prompt = False)
                 device_config.append((cmd, config_output))
             print("Command Execution Successfully Completed")
             return device_config
@@ -76,11 +76,13 @@ class DeviceConnect:
         if net_connect is not None:
             net_connect.enable()
             for cmd in self.commands:
-                output = net_connect.send_command_expect(cmd,expect_string=r'>|#|$', delay_factor=4, strip_command=False, strip_prompt=False, max_loops=100)
+                output = net_connect.send_command_expect(cmd, expect_string=r'>|#|$', delay_factor=4, strip_command=False, strip_prompt=False, max_loops=100)
                 device_config.append(output)
             for config in device_config:
                 with open ('./Output/{}.txt'.format('device_config'),'a') as f:
-                    f.write(output)
+                    f.write('\n')
+                    f.write(config)
+                    f.write('\n')
             return device_config
 
 

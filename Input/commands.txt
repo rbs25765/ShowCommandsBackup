@@ -1,12 +1,4 @@
 please enter show commands from second line onwards, Don't enter any command in line 1.
+terminal leng 0
 show ip arp
-show cdp nei detail
-sho runn
-show ip int brief
-show license
-show inventory
-show ip protocol summary
-show ip arp
-
-
-
+show runn
