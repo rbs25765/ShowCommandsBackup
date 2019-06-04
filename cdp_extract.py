@@ -11,7 +11,7 @@ class CdpExtract:
         self.ic = IPCmd()
         self.ce = DeviceConnect()
         self.core_ip = self.ic.core_ip_extract()
-        self.device_name = re.compile(r'(?:Device ID:)\s(.+)')
+        self.device_name = re.compile(r'(?:Device ID:)\s(.+?)(?:\.)')
         self.mgmt_ip_add = re.compile(r'(?:  IP address:) (\d+.\d+.\d+.\d+)')
         self.core_hostname = re.compile(r'(?:hostname\s)(\w+\S\w+.+)')
         self.mgmt_entry_search = re.compile(r'(Entry a.+)')
@@ -24,24 +24,29 @@ class CdpExtract:
         peer_hostname = ""
         i = 0
         out_conf_dict = {}
+        flag = False
         try:
             while True:
                 ip_add = cdp_neighbor_list[i]
                 core_connect = self.ce.dev_connect(ip_add)
                 if core_connect is not None:
-                    cdp_neighbor_data = core_connect.send_command_timing("show cdp neighbor detail")
+                    core_connect.enable()
+                    cdp_neighbor_data = core_connect.send_command_timing("show cdp neighbor detail",delay_factor = 2)
                     output_config = self.ce.config_extract(core_connect)
                     out_conf_dict[cdp_neighbor_list[i]] = output_config
+                    # print(out_conf_dict)
                     for line in cdp_neighbor_data.splitlines():
                         if self.device_name.match(line):
                             peer_hostname = self.device_name.match(line).group(1)
-                        elif self.mgmt_ip_add.match(line):
+                            print(peer_hostname)
+                        elif self.mgmt_entry_search.match(line):
+                            flag = True
+                        elif flag and self.mgmt_ip_add.match(line):
                             neighbor_ip = self.mgmt_ip_add.match(line).group(1)
                             if neighbor_ip not in cdp_neighbor_list and peer_hostname not in cdp_hostname_list:
                                 cdp_neighbor_list.append(neighbor_ip)
                                 cdp_hostname_list.append(peer_hostname)
-                # else:
-                #     out_conf_dict[cdp_neighbor_list[i]] = "None"
+                                flag = False
                 i += 1
         except IndexError:
             print("CDP {} Discovery completed".format(ip))
@@ -51,8 +56,10 @@ class CdpExtract:
         if bool(final_config_dict):
             if not os.path.exists('./Output/Site{}'.format(self.site_count)):
                 os.mkdir('./Output/Site{}'.format(self.site_count))
+
             for file, config in final_config_dict.items():
-                with open('./Output/Site{}/'.format(self.site_count)+file+'.txt', 'a') as f:
+                print(file)
+                with open('./Output/Site{}/{}.txt'.format(self.site_count, file), 'a') as f:
                     for item in range(len(config)):
                         f.write(config[item][0])
                         f.write('\n')

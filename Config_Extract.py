@@ -54,6 +54,7 @@ class DeviceConnect:
                 print("Device not responding")
                 return None
 
+
     def config_extract(self, net_connect):
 
         """ Take the device ip and execute show commands and
@@ -69,6 +70,14 @@ class DeviceConnect:
             return device_config
         else:
             return None
+
+    def config_extract_except(self,net_connect):
+        device_config = []
+        if net_connect is not None:
+            net_connect.enable()
+            for cmd in self.commands:
+                net_connect.send_command_expect(cmd,expect_string=r'>|#|$', delay_factor=2, strip_command=False, strip_prompt=False, max_loops=100)
+                
 
 
 if __name__ == '__main__':

@@ -1,12 +1,12 @@
 please enter show commands from second line onwards, Don't enter any command in line 1.
 show ip arp
-show cdp neighbor detail
-show int desc
-show running
-show version
-show ip bgp summary
-show cdp neighbor
-show interfaces summary
+show cdp nei detail
+sho runn
+show ip int brief
+show license
+show inventory
+show ip protocol summary
+show ip arp
 
 
 
