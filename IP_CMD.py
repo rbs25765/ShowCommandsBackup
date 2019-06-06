@@ -33,23 +33,24 @@ class IPCmd:
     def device_type_extract(self):
         """ Enter choice to connect the device and 
             returns device type """
-        print("Press c for Cisco, j for Juniper, h for HP or e for exit")
-        while True:
-            choice = input("Enter your Device Choice: ")
-            if choice == 'c':
-                self.device_type = 'cisco_ios'
-                break
-            elif choice == 'j':
-                self.device_type = 'juniper'
-                break
-            elif choice == 'h':
-                self.device_type = 'hp_procurve'
-                break
-            elif choice == 'e':
-                print("Exiting program")
-                return None
-            else:
-                print("Invalid Input! Press c for Cisco, j for Juniper, h for HP or e for exit! Try again")
+        # print("Press c for Cisco, j for Juniper, h for HP or e for exit")
+        # while True:
+        #     choice = input("Enter your Device Choice: ")
+        #     if choice == 'c':
+        #         self.device_type = 'cisco_ios'
+        #         break
+        #     elif choice == 'j':
+        #         self.device_type = 'juniper'
+        #         break
+        #     elif choice == 'h':
+        #         self.device_type = 'hp_procurve'
+        #         break
+        #     elif choice == 'e':
+        #         print("Exiting program")
+        #         return None
+        #     else:
+        #         print("Invalid Input! Press c for Cisco, j for Juniper, h for HP or e for exit! Try again")
+        self.device_type = 'cisco_ios'
         return self.device_type
 
 

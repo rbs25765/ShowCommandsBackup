@@ -54,7 +54,6 @@ class DeviceConnect:
                 print("Device not responding")
                 return None
 
-
     def config_extract(self, net_connect):
 
         """ Take the device ip and execute show commands and
